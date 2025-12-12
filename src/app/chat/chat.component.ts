@@ -63,7 +63,7 @@ import { NostrService, ChatMessage, ZapEvent } from '../services/nostr.service';
       display: flex;
       flex-direction: column;
       height: 100%;
-      background-color: #1a1a2e;
+      background-color: transparent;
       color: #fff;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
