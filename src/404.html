@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nostria Stream Chat</title>
     <script>
-      // Single Page Apps for GitHub Pages
-      // https://github.com/rafgraph/spa-github-pages
-      var pathSegmentsToKeep = 1;
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
+      // Redirect to index.html with the path as a query parameter
+      var segment = 1; // number of path segments to keep (1 for /repo-name/)
+      var location = window.location;
+      var pathAfterBase = location.pathname.split('/').slice(segment + 1).join('/');
+      if (pathAfterBase) {
+        var search = location.search ? '&' + location.search.slice(1) : '';
+        var newUrl = location.pathname.split('/').slice(0, segment + 1).join('/') + 
+          '/?p=/' + pathAfterBase + search + location.hash;
+        location.replace(newUrl);
+      }
     </script>
   </head>
   <body>
