@@ -93,10 +93,17 @@ import { NostrService, ChatMessage, ZapEvent } from '../services/nostr.service';
     .chat-messages {
       flex: 1;
       overflow-y: auto;
+      overflow-x: hidden;
       padding: 0.5rem;
       display: flex;
       flex-direction: column;
       gap: 0.25rem;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+
+    .chat-messages::-webkit-scrollbar {
+      display: none;  /* Chrome, Safari, Opera */
     }
 
     .chat-message {
