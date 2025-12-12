@@ -219,24 +219,6 @@ import { NostrService, ChatMessage, ZapEvent } from '../services/nostr.service';
       font-style: italic;
       margin-top: 0.25rem;
     }
-
-    /* Scrollbar styling */
-    .chat-messages::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    .chat-messages::-webkit-scrollbar-track {
-      background: rgba(255, 255, 255, 0.05);
-    }
-
-    .chat-messages::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 4px;
-    }
-
-    .chat-messages::-webkit-scrollbar-thumb:hover {
-      background: rgba(255, 255, 255, 0.3);
-    }
   `]
 })
 export class ChatComponent implements OnInit, OnDestroy {
