@@ -162,8 +162,8 @@ export class NostrService {
     );
     this.subscriptions.push(activitySub);
 
-    // Subscribe to chat messages (kind 1311)
-    const chatFilter: Filter = { kinds: [1311], '#a': [aTag] };
+    // Subscribe to chat messages (kind 1311) - limit to last 20
+    const chatFilter: Filter = { kinds: [1311], '#a': [aTag], limit: 20 };
     const chatSub = this.pool.subscribeMany(
       relays,
       chatFilter,
@@ -179,8 +179,8 @@ export class NostrService {
     );
     this.subscriptions.push(chatSub);
 
-    // Subscribe to zap receipts (kind 9735)
-    const zapFilter: Filter = { kinds: [9735], '#a': [aTag] };
+    // Subscribe to zap receipts (kind 9735) - limit to last 20
+    const zapFilter: Filter = { kinds: [9735], '#a': [aTag], limit: 20 };
     const zapSub = this.pool.subscribeMany(
       relays,
       zapFilter,
