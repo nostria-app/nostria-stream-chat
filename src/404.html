@@ -6,13 +6,11 @@
     <title>Nostria Stream Chat</title>
     <script>
       // Redirect to index.html with the path as a query parameter
-      var segment = 1; // number of path segments to keep (1 for /repo-name/)
       var location = window.location;
-      var pathAfterBase = location.pathname.split('/').slice(segment + 1).join('/');
-      if (pathAfterBase) {
+      var path = location.pathname;
+      if (path && path !== '/') {
         var search = location.search ? '&' + location.search.slice(1) : '';
-        var newUrl = location.pathname.split('/').slice(0, segment + 1).join('/') + 
-          '/?p=/' + pathAfterBase + search + location.hash;
+        var newUrl = '/?p=' + path + search + location.hash;
         location.replace(newUrl);
       }
     </script>
