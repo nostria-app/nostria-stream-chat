@@ -48,13 +48,10 @@ export class NostrService {
     'wss://relay.damus.io',
     'wss://relay.nostr.band',
     'wss://nos.lol',
-    'wss://relay.snort.social',
     'wss://relay.primal.net',
     'wss://nostr.wine',
-    'wss://relay.nostr.bg',
     'wss://nostr-pub.wellorder.net',
     'wss://offchain.pub',
-    'wss://relay.current.fyi',
   ];
 
   private readonly _messages = signal<ChatMessage[]>([]);
