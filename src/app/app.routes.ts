@@ -2,12 +2,12 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: ':naddr',
-    loadComponent: () => import('./chat/chat.component').then((m) => m.ChatComponent),
+    path: '',
+    pathMatch: 'full',
+    loadComponent: () => import('./home/home.component').then((m) => m.HomeComponent),
   },
   {
-    path: '',
-    redirectTo: '/',
-    pathMatch: 'full',
+    path: ':naddr',
+    loadComponent: () => import('./chat/chat.component').then((m) => m.ChatComponent),
   },
 ];
